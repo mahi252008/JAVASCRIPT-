@@ -1,3 +1,142 @@
+<html>
+<head>
+  <title>HTML Basics</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    section {
+      padding: 20px;
+      margin: 10px;
+      border-radius: 10px;
+    }
+    .formatting {background-color: aliceblue; }
+    .list {background-color: honeydew; }
+    .links {background-color: mintcream;  }
+    .forms { background-color: lavender; }
+    .media {background-color: linen; }
+    .table {background-color: beige; }
+    .semantic {background-color: floralwhite;}
+    footer {
+      background-color: lightsalmon;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9em;
+    }
+    table, th, td {
+      border: 1px solid gray;
+      border-collapse: collapse;
+      padding: 10px;
+    }
+    h1 {
+      color: darkblue;
+    }
+  </style>
+</head>
+<body>
 
-abc
-chages added
+  <section class="formatting">
+    <h1>Text Formatting Tags</h1>
+    <p>This is a <strong>strong</strong> and <em>emphasized</em> text.</p>
+    <p>Use <b>bold</b>, <i>italic</i>, <u>underline</u> and <mark>mark</mark>.</p>
+    <p>This is <code>inline code</code> and <s>strikethrough</s>.</p>
+    <p>This is a <small>small</small> and <sub>subscript</sub> / <sup>superscript</sup>.</p>
+    <blockquote>This is a block quote example.</blockquote>
+    <pre>Preformatted text-formatted</pre>
+    <p><abbr title="World Health Organization">WHO</abbr> is an abbreviation.</p>
+  </section>
+
+  <section class="list">
+    <h1>Lists</h1>
+    <ul>
+      <li>Unordered item 1</li>
+      <li>Unordered item 2</li>
+    </ul>
+    <ol>
+      <li>Ordered item 1</li>
+      <li>Ordered item 2</li>
+    </ol>
+  </section>
+
+  <section class="links">
+    <h1>Links and Anchors</h1>
+    <p><a href="https://www.example.com" target="_blank">Visit Example</a></p>
+  </section>
+
+  <section class="forms">
+    <h1>Forms and Inputs</h1>
+    <form>
+      Name: <input type="text"><br><br>
+      Email: <input type="email"><br><br>
+      Password: <input type="password"><br><br>
+      Gender:
+      <input type="radio" name="gender" id="male"><label for="male">Male</label>
+      <input type="radio" name="gender" id="female"><label for="female">Female</label><br><br>
+      Hobbies:
+      <input type="checkbox" id="reading"><label for="reading">Reading</label>
+      <input type="checkbox" id="coding"><label for="coding">Coding</label><br><br>
+      Favorite Color: <input type="color"><br><br>
+      DOB: <input type="date" placeholder="dd-mm-yyyy"><br><br>
+      Upload File: <input type="file"><br><br>
+      Country:
+      <select>
+        <option>India</option>
+      </select><br><br>
+      <textarea placeholder="Type here..." rows="4" cols="30"></textarea><br><br>
+      <input type="submit" value="Submit">
+      <input type="reset" value="Reset">
+    </form>
+  </section>
+
+  <section class="media">
+    <h1>Images, Audio & Video</h1>
+    <p>Image Example:</p>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.eV1wEcq3Yn34nLL8tr0Y-gHaEg?pid=Api&P=0&h=180" alt="image"><br><br>
+    <p>Audio Example:</p>
+    <audio controls>
+      <source src="your-audio-file.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio><br><br>
+    <p>Video Example:</p>
+    <video width="320" height="240" controls>
+      <source src="your-video-file.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </section>
+
+  <section class="table">
+    <h1>Table</h1>
+    <table>
+      <tr><th>Name</th><th>Age</th></tr>
+      <tr><td>John</td><td>25</td></tr>
+      <tr><td>Jane</td><td>30</td></tr>
+    </table>
+  </section>
+
+  <section class="semantic">
+    <h1>Semantic Elements</h1>
+    <article>
+      <h4>Article Title</h4>
+      <p>This is an article.</p>
+    </article>
+    <aside>
+      <p>This is an aside.</p>
+    </aside>
+    <details>
+      <summary>Click to expand</summary>
+      <p>This content is revealed when expanded.</p>
+    </details>
+    <figure>
+      <img src="https://via.placeholder.com/150" alt="Figure Image">
+      <figcaption>This is a figcaption.</figcaption>
+    </figure>
+  </section>
+
+  <footer>
+    <p>Footer content here</p>
+  </footer>
+
+</body>
+</html>
