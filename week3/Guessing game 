@@ -1,0 +1,84 @@
+javascript.js guessing game
+var gameStart = document.getElementById("game-start");
+var userInput = document.getElementById("user-input");
+var submitBtn = document.getElementById("submit");
+var attempt = document.getElementById("turn");
+var hint = document.getElementById("hint");
+
+var randomNumber;
+var turnCounter = 0;
+var gameActive = false;
+
+function startGame() {
+  randomNumber = Math.floor(Math.random() * 100) + 1; // random between 1-100
+  turnCounter = 0;
+  gameActive = true;
+  attempt.innerText = `Turn: ${turnCounter}`;
+  hint.innerText = "";
+  userInput.value = "";
+  alert("Game Started! Start guessing the number between 1 and 100.");
+}
+
+function inputSubmit() {
+  if (!gameActive) {
+    alert("Please start the game first!");
+    return;
+  }
+  
+  var currentValue = Number(userInput.value);
+  
+  if (!currentValue || currentValue < 1 || currentValue > 100) {
+    alert("Please enter a valid number between 1 and 100.");
+    return;
+  }
+
+  turnCounter++;
+  attempt.innerText = `Turn: ${turnCounter}`;
+
+  if (currentValue < randomNumber) {
+    hint.innerText = "Hint: Number is too small, enter a bigger number.";
+  } else if (currentValue > randomNumber) {
+    hint.innerText = "Hint: Number is too big, enter a smaller number.";
+  } else {
+    hint.innerText = `Guessed Correctly!!! You Win in ${turnCounter} turns!`;
+    gameActive = false;
+  }
+  
+  userInput.value = "";
+  userInput.focus();
+}
+
+// Event listeners
+gameStart.addEventListener("click", startGame);
+submitBtn.addEventListener("click", inputSubmit);
+
+// Optional: Allow pressing "Enter" key to submit guess
+userInput.addEventListener("keydown", function(event) {
+  if (event.key === "Enter") {
+    inputSubmit();
+  }
+});
+
+index.html guessing game
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Number Guessing Game</title>
+</head>
+<body>
+  <button id="game-start">Start Game</button>
+  <br><br>
+  
+  <label for="user-input">Guess the Number:</label>
+  <input type="number" id="user-input" placeholder="ex: 5" />
+  <button id="submit">Submit</button>
+  <br><br>
+  
+  <label id="turn">Turn: 0</label><br>
+  <label id="hint"></label>
+
+  <script src="javascript.js"></script>
+</body>
+</html>
