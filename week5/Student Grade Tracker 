@@ -1,0 +1,63 @@
+<html>
+<body>
+	
+	<h1>Student Grade</h1>
+	<div class="container">
+		<input type="text" id="name" placeholder="Enter student name">
+		<input type="number" id="marks" placeholder="Enter marks">
+		<button onclick="addStudent()">Add Student</button>
+		<button onclick="showResults()">Show Grades</button>
+		
+		
+		<div class="results" id="results"></div>
+	</div>
+	
+	<script>
+		var students = [];
+
+		function addStudent() {
+			var name = document.getElementById('name').value.trim();
+			var marks = parseFloat(document.getElementById('marks').value);
+
+			if (!name) {
+				alert('Please enter student name');
+				return;
+			}
+			if (isNaN(marks) || marks < 0 || marks > 100) {
+				alert('Please enter valid marks between 0 and 100');
+				return;
+			}
+
+			students.push({name: name, marks: marks});
+			document.getElementById('name').value = '';
+			document.getElementById('marks').value = '';
+			alert('Student added!');
+		}
+
+		function showResults() {
+			var results = document.getElementById('results');
+			results.innerHTML = '';
+
+			if (students.length === 0) {
+				results.innerText = 'No students added yet.';
+				return;
+			}
+
+			for (var i = 0; i < students.length; i++) {
+				var student = students[i];
+				var grade = getGrade(student.marks);
+				results.innerHTML += student.name + ' - Marks: ' + student.marks + ' - Grade: ' + grade + '<br>';
+			}
+		}
+
+		function getGrade(marks) {
+			if (marks >= 90) return 'A';
+			if (marks >= 80) return 'B';
+			if (marks >= 70) return 'C';
+			if (marks >= 60) return 'D';
+			return 'F';
+		}
+	</script>
+	
+</body>
+</html>
